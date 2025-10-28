@@ -1,4 +1,58 @@
-<!DOCTYPE html>
+<!-- Update the toggle buttons to pass the button element -->
+<div class="toggle-container">
+    <button class="toggle-btn active" onclick="showView('candidates', this)">👤 For Candidates</button>
+    <button class="toggle-btn" onclick="showView('recruiters', this)">💼 For Recruiters</button>
+    <button class="toggle-btn" onclick="showView('whats', this)">📦 What's in the app?</button>
+</div>
+
+<!-- Add a new "What's in the app" view -->
+<div id="whats" class="view">
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="feature-icon">📦</div>
+            <div class="feature-title">For Candidates</div>
+            <div class="feature-desc">
+                Candidate (job seeker)
+Upload CV → Paste job link → AI extracts requirements → Fit score (0–100) → Gap list (must-haves / tools / domain) → One-line fixes → 2–3 learning links → Micro-plan (weeks) → "Apply now" or "Fix first" → Role-specific CV bullets → Nearby roles suggested → Save & track progress
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🛠️</div>
+            <div class="feature-title">For Employers</div>
+            <div class="feature-desc">
+                Create job → AI drafts clear JD → Edit & publish → Applicants auto-parsed → Match score per candidate → Filter (must-haves/years/tools) → Explainable shortlist → Auto-schedule interviews → Transcript & summary → Consolidate panel feedback → Offer / Reject with reasons    </div>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <div class="feature-title">Continuous improvement</div>
+            <div class="feature-desc">
+Continuous improvement
+JD live → Aggregate gap insights (anonymized) → AI suggests JD refinements → Republish → Higher-quality applications
+          </div>
+        </div>
+    </div>
+
+     <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <div class="feature-title">Admin</div>
+            <div class="feature-desc">
+Manage skills/roles/resources → Privacy & consent controls → Audit logs & basic analytics (time-to-shortlist, fit uplift)        </div>
+        </div>
+    </div>
+
+
+<!-- Update script to accept the clicked button -->
+<script>
+    function showView(view, btn) {
+        document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+        document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+        const el = document.getElementById(view);
+        if (el) el.classList.add('active');
+        if (btn) btn.classList.add('active');
+    }
+</script>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -168,13 +222,7 @@
     </style>
 </head>
 <body>
-    <h1>🚀 AI-Powered Recruitment Platform</h1>
-    
-    <div class="toggle-container">
-        <button class="toggle-btn active" onclick="showView('candidates')">👤 For Candidates</button>
-        <button class="toggle-btn" onclick="showView('recruiters')">💼 For Recruiters</button>
-    </div>
-    
+    <h1>🚀 AI-Powered Recruitment Platform</h1>    
     <div class="content-container">
         <!-- Candidates View -->
         <div id="candidates" class="view active">
